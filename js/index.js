@@ -4,8 +4,8 @@ let verbsContainer = getElementById('verbs-container');
  * Tum fiilleri render eder.
  */
 verbsContainer.innerHTML = verbList
-    .map((verb) => {
-        return `
+  .map((verb) => {
+    return `
     <tr>
         <th>${verb.verb1Name}</th>
         <td>${verb.verb2Name}</td>
@@ -13,8 +13,9 @@ verbsContainer.innerHTML = verbList
         <td>${verb.verb1Pronunciation}</td>
         <td>${verb.verb2Pronunciation}</td>
         <td>${verb.verb3Pronunciation}</td>
+        <td>-</td>
         <td>${verb.verbTurkish}</td>
     </tr>
     `;
-    })
-    .join('');
+  })
+  .join('');

@@ -5,8 +5,8 @@ let randomNumber = getRandomNumber(verbList.length);
 verbContainer.innerHTML = getNewVerb(randomNumber);
 
 btnNewVerb.addEventListener('click', function () {
-    let randomNumber = getRandomNumber(verbList.length);
-    verbContainer.innerHTML = getNewVerb(randomNumber);
+  let randomNumber = getRandomNumber(verbList.length);
+  verbContainer.innerHTML = getNewVerb(randomNumber);
 });
 
 /**
@@ -16,7 +16,7 @@ btnNewVerb.addEventListener('click', function () {
  * Bu fonksiyon, kendisine parametre olarak gonderilen index numarasina gore fiili render eder.
  */
 function getNewVerb(pRandomNumber) {
-    return `
+  return `
         <tr>
             <td class="bg-primary text-white">Verb</td>
             <td>${verbList[pRandomNumber].verb1Name}</td>
@@ -28,6 +28,10 @@ function getNewVerb(pRandomNumber) {
             <td>${verbList[pRandomNumber].verb1Pronunciation}</td>
             <td>${verbList[pRandomNumber].verb2Pronunciation}</td>
             <td>${verbList[pRandomNumber].verb3Pronunciation}</td>
+        </tr>
+        <tr>
+            <td class="bg-primary text-white">Italian</td>
+            <td colspan="3">-</td>
         </tr>
         <tr>
             <td class="bg-primary text-white">Turkish</td>
