@@ -13,7 +13,7 @@ verbsContainer.innerHTML = verbList
         <td>${verb.verb1Pronunciation}</td>
         <td>${verb.verb2Pronunciation}</td>
         <td>${verb.verb3Pronunciation}</td>
-        <td>-</td>
+        <td> Italian meaning.. </td>
         <td>${verb.verbTurkish}</td>
     </tr>
     `;
