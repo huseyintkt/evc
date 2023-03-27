@@ -1,5 +1,4 @@
 let verbsContainer = getElementById('verbs-container');
-let italianMeaning = 'Italian meaning..';
 
 /**
  * Tum fiilleri render eder.
@@ -8,13 +7,13 @@ verbsContainer.innerHTML = verbList
   .map((verb) => {
     return `
     <tr>
-        <th>${verb.verb1Name}</th>
-        <td>${verb.verb2Name}</td>
-        <td>${verb.verb3Name}</td>
-        <td>${verb.verb1Pronunciation}</td>
-        <td>${verb.verb2Pronunciation}</td>
-        <td>${verb.verb3Pronunciation}</td>
-        <td>${italianMeaning}</td>
+        <th>${verb.verbPresentSimple}</th>
+        <td>${verb.verbPastSimple}</td>
+        <td>${verb.verbPastParticiple}</td>
+        <td>${verb.verbPresentSimplePronunciation}</td>
+        <td>${verb.verbPastSimplePronunciation}</td>
+        <td>${verb.verbPastParticiplePronunciation}</td>
+        <td>${verb.verbItalian}</td>
         <td>${verb.verbTurkish}</td>
     </tr>
     `;

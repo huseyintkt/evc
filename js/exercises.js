@@ -11,7 +11,7 @@ allVerbsContainer.innerHTML = verbList
   .map((verb, index) => {
     return `
         <div class="col-lg-2 mb-3">
-           <a onClick='getVerb(${index})' href='#'>${verb.verb1Name}</a>
+           <a onClick='getVerb(${index})' href='#'>${verb.verbPresentSimple}</a>
         </div>
     `;
   })
@@ -31,7 +31,7 @@ function getVerb(pVerbIndex) {
   let verb = verbList[index];
   verbContainer.innerHTML = `
         <div class="d-flex justify-content-between mb-3">
-            <h5>${verb.verbTurkish} / Italian meaning</h5>
+            <h5>${verb.verbTurkish} /${verb.verbItalian} </h5>
             <button
                 class="btn btn-primary"
                 onclick="getVerb()"
@@ -95,7 +95,7 @@ function handleChangeV1(pVerbIndex) {
   let verb = verbList[pVerbIndex];
   let input = getElementById('input-v1');
   let iconContainer = getElementById('check-icon-v1');
-  if (verb.verb1Name === input.value.toLowerCase().trim()) {
+  if (verb.verbPresentSimple === input.value.toLowerCase().trim()) {
     iconContainer.innerHTML = `<i class="fas fa-check-circle"></i>`;
   } else {
     iconContainer.innerHTML = `<i class="fas fa-times-circle"></i>`;
@@ -111,7 +111,7 @@ function handleChangeV2(pVerbIndex) {
   let verb = verbList[pVerbIndex];
   let input = getElementById('input-v2');
   let iconContainer = getElementById('check-icon-v2');
-  if (verb.verb2Name === input.value.toLowerCase().trim()) {
+  if (verb.verbPastSimple === input.value.toLowerCase().trim()) {
     iconContainer.innerHTML = `<i class="fas fa-check-circle"></i>`;
   } else {
     iconContainer.innerHTML = `<i class="fas fa-times-circle"></i>`;
@@ -127,7 +127,7 @@ function handleChangeV3(pVerbIndex) {
   let verb = verbList[pVerbIndex];
   let input = getElementById('input-v3');
   let iconContainer = getElementById('check-icon-v3');
-  if (verb.verb3Name === input.value.toLowerCase().trim()) {
+  if (verb.verbPastParticiple === input.value.toLowerCase().trim()) {
     iconContainer.innerHTML = `<i class="fas fa-check-circle"></i>`;
   } else {
     iconContainer.innerHTML = `<i class="fas fa-times-circle"></i>`;
@@ -151,9 +151,9 @@ function clearInputs() {
 function showAnswers(pVerbIndex) {
   let verb = verbList[pVerbIndex];
   let inputs = document.getElementsByClassName('input-verb');
-  inputs[0].value = verb.verb1Name;
-  inputs[1].value = verb.verb2Name;
-  inputs[2].value = verb.verb3Name;
+  inputs[0].value = verb.verbPresentSimple;
+  inputs[1].value = verb.verbPastSimple;
+  inputs[2].value = verb.verbPastParticiple;
   renderTrueIcons();
 }
 
